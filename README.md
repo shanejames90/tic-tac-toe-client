@@ -36,3 +36,5 @@ The user can elect to change a password via authentication.  The user can also v
 ### Images
 
 [Wireframe v1.2](https://imgur.com/gallery/4UJqdXh)
+
+[Breaking Down the Problem](https://imgur.com/gallery/i4J7Dmg)
