@@ -9,11 +9,12 @@ const authEvents = require('./auth/events')
 $(() => {
   // your JS code goes here
   // Hide authenticated options
-  $('.unauthenticated').show()
+
+  $('.authenticated').hide()
   // Sign up listener
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
-  // Show unauthenticated options
-  $('.authenticated').hide()
-  $('#sign-out').on('submit', authEvents.onSignOut)
+
+  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#change-password').on('submit', authEvents.onChangePassword)
 })

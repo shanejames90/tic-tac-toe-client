@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <h1>EDSAC-tac-Reboot</h1>
       <p id="message"></p>
       <div class="unauthenticated">
         <form id="sign-in">
@@ -20,9 +20,8 @@
           <input name="credentials[password]" type="password" placeholder="password" />
           <button type="submit">Sign In</button>
         </form>
-        <h6>New User</h6>
-        <p id="message2"></p>
         <form id="sign-up">
+          <h6>New User</h6>
           <input name="credentials[email]" type="text" placeholder="Enter Your Email" />
           <input name="credentials[password]" type="password" placeholder="create a password" />
           <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" />
@@ -52,12 +51,12 @@
           </div>
         </div> -->
         <form id="change-password">
-          <input name="password[old]" type="password" placeholder="old password" />
-          <input name="password[new]" type="password" placeholder="new password" />
+          <input name="passwords[old]" type="password" placeholder="old password" />
+          <input name="passwords[new]" type="password" placeholder="new password" />
           <button type="submit">Change Password</button>
         </form>
         <form id="sign-out">
-          <button type="submit">Sign Out</button>
+          <button type="button">Sign Out</button>
         </form>
       </div>
     </body>

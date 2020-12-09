@@ -6,6 +6,8 @@ const store = require('./../store')
 // will pass this funciton a response object from the API
 const signUpSuccess = function (response) {
   $('#message').text('Signed up successfully!')
+
+  $('form').trigger('reset')
 }
 
 // The ajax function's .catch
@@ -24,9 +26,10 @@ const signInSuccess = function (response) {
 
   // TODO: "Change the View"
   // Hide the unauth options
-  $('.unauthenticated').hide()
+
   // Show the auth options
   $('.authenticated').show()
+  $('.unauthenticated').hide()
 }
 
 const signInFailure = function (error) {
@@ -34,10 +37,11 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
+  console.log('did this run?')
   $('#message').text('Signed out successfully!')
 
-  $('authenticated').hide()
-  $('unauthenticated').show()
+  $('.authenticated').hide()
+  $('.unauthenticated').show()
 
   store.user = null
 
@@ -49,11 +53,23 @@ const signOutFailure = function (error) {
   $('#message').text('Sign out fail: ' + error.responseJSON.message)
 }
 
+const changePasswordSuccess = function () {
+  $('#message').text('Password changed successfully!')
+
+  $('form').trigger('reset')
+}
+
+const changePasswordFailure = function (error) {
+  $('#message').text('Password change failed with error: ' + error.responseJSON.message)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
