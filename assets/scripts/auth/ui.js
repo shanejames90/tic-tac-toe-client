@@ -29,7 +29,9 @@ const signInSuccess = function (response) {
 
   // Show the auth options
   $('.authenticated').show()
+  $('#gameboard').hide()
   $('.unauthenticated').hide()
+
 }
 
 const signInFailure = function (error) {

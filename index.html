@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>tictactoe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>tictactoe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>ED-SAC-toe </h1>
-      <p id="message"></p>
-      <div class="unauthenticated">
-        <form id="sign-in">
-          <input name="credentials[email]" type="text" placeholder="email" />
-          <input name="credentials[password]" type="password" placeholder="password" />
-          <button type="submit">Sign In</button>
-        </form>
-        <form id="sign-up">
-          <h6>New User</h6>
-          <input name="credentials[email]" type="text" placeholder="Enter Your Email" />
-          <input name="credentials[password]" type="password" placeholder="create a password" />
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" />
-          <button type="submit">Sign Up</button>
-        </form>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>ED-SAC-toe </h1>
+  <p id="message"></p>
+  <p id="message2"></p>
+  <div class="unauthenticated">
+    <form id="sign-in">
+      <input name="credentials[email]" type="text" placeholder="email" />
+      <input name="credentials[password]" type="password" placeholder="password" />
+      <button type="submit">Sign In</button>
+    </form>
+    <form id="sign-up">
+      <h6>New User</h6>
+      <input name="credentials[email]" type="text" placeholder="Enter Your Email" />
+      <input name="credentials[password]" type="password" placeholder="create a password" />
+      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  <div class="authenticated">
+    <form id="new-game">
+      <button type="submit">New Game</button>
+    </form>
+    <form id="games-played">
+      <button type="submit">Games Played</button>
+    </form>
+    <div id="gameboard">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 box alt-color" data-cell-index="0" data-cell-value=""><button type="submit" formmethod="post">0</button></div>
+          <div class="col-4 box alt-color" data-cell-index="1" data-cell-value=""><button type="submit" formmethod="post">1</button></div>
+          <div class="col-4 box alt-color" data-cell-index="2" data-cell-value=""><button type="submit" formmethod="post">2</button></div>
+          <div class="col-4 box alt-color" data-cell-index="3" data-cell-value=""><button type="submit" formmethod="post">3</button></div>
+          <div class="col-4 box alt-color" data-cell-index="4" data-cell-value=""><button type="submit" formmethod="post">4</button></div>
+          <div class="col-4 box alt-color" data-cell-index="5" data-cell-value=""><button type="submit" formmethod="post">5</button></div>
+          <div class="col-4 box alt-color" data-cell-index="6" data-cell-value=""><button type="submit" formmethod="post">6</button></div>
+          <div class="col-4 box alt-color" data-cell-index="7" data-cell-value=""><button type="submit" formmethod="post">7</button></div>
+          <div class="col-4 box alt-color" data-cell-index="8" data-cell-value=""><button type="submit" formmethod="post">8</button></div>
+        </div>
       </div>
-      <div class="authenticated">
-        <form id="new-game">
-          <button type="submit">New Game</button>
-        </form>
-        <form id="games-played">
-          <button type="submit">Games Played</button>
-        </form>
-        <!-- <div id="gameboard">
-          <div class="container">
-            <div class="row">
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-              <div class="col-4 box alt-color">.col4</div>
-            </div>
-          </div>
-        </div> -->
-        <form id="change-password">
-          <input name="passwords[old]" type="password" placeholder="old password" />
-          <input name="passwords[new]" type="password" placeholder="new password" />
-          <button type="submit">Change Password</button>
-        </form>
-        <form id="sign-out">
-          <button type="button">Sign Out</button>
-        </form>
-      </div>
-    </body>
+    </div>
+    <form id="change-password">
+      <input name="passwords[old]" type="password" placeholder="old password" />
+      <input name="passwords[new]" type="password" placeholder="new password" />
+      <button type="submit">Change Password</button>
+    </form>
+    <form id="sign-out">
+      <button type="button">Sign Out</button>
+    </form>
+  </div>
+</body>
+
 </html>
