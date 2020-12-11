@@ -7,7 +7,7 @@ const newGameSuccess = function (response) {
 
   $('#gameboard').show()
 
-  $('#message2').text('Player x please make youre move...')
+  // $('#message2').text('Player x please make youre move...')
 
   store.game = response.game
 }
@@ -17,8 +17,13 @@ const newGameFailure = function (error) {
 }
 
 const onUpdateGameSuccess = function (response) {
-  $('user-turn').text('rotate b/t x and o')
+  $('#message').text('Player x please make your move...')
   store.game = response.game
+
+  const moveHtml = `
+    <h3>cell-value: ${response.game.cellIndex}</h3>
+  `
+  $('.row').html(moveHtml)
 }
 
 const onUpdateGameFailure = function (error) {

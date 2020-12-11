@@ -20,7 +20,7 @@ const onUserMove = function (event) {
   event.preventDefault()
 
   const index = $(event.target).data('cellIndex')
-  console.log(index)
+  // console.log(index)
   // // const player1 = 'x'
   // // const player2 = 'o'
   // const value = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
@@ -29,6 +29,9 @@ const onUserMove = function (event) {
   //     if(i===9)
   //       {break;}
   //   }
+
+  const value = 'x'
+  $(event.target).html(`<h3>${value}</h3>`)
 
   const gameData = {
     game: {
@@ -40,13 +43,9 @@ const onUserMove = function (event) {
     }
   }
 
-console.log(gameData.game.cell.value)
-
   api.newGame(gameData)
     .then(ui.onUpdateGameSucces)
     .catch(ui.onUpdateGamefailure)
-
-  $
 }
 
 module.exports = {
