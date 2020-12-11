@@ -44,6 +44,7 @@ const signOutSuccess = function () {
 
   $('.authenticated').hide()
   $('.unauthenticated').show()
+  $('#message2').hide()
 
   store.user = null
 

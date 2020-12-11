@@ -16,7 +16,16 @@ const newGameFailure = function (error) {
   $('#message').text('Game failed to start with error: ' + error.responseJSON.message)
 }
 
+const onUpdateGameSuccess = function () {
+  $('user-turn').text('rotate b/t x and o')
+  store.game = response.game
+}
+
+const onUpdateGameFailure = function
+
+
 module.exports = {
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  onUpdateGameSuccess
 }

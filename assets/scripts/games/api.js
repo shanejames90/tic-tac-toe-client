@@ -14,6 +14,17 @@ const newGame = function (data) {
   })
 }
 
+const userMove = function (gameData) {
+  return $.ajax({
+    url: config.apiUrl + '/games' + store.games._id,
+    method: 'PATCH',
+    data: gameData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
-  newGame
+  newGame,
+  userMove
 }

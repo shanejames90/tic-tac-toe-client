@@ -16,6 +16,40 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
+const onUserMove = function (event) {
+  event.preventDefault()
+
+  const index = $(event.target).data('cellIndex')
+  console.log(index)
+  // // const player1 = 'x'
+  // // const player2 = 'o'
+  // const value = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+  //   while(!gameOver) {
+  //     i++;
+  //     if(i===9)
+  //       {break;}
+  //   }
+
+  const gameData = {
+    game: {
+      cell: {
+        index: index,
+        value: value
+      },
+      over: false
+    }
+  }
+
+console.log(gameData.game.cell.value)
+
+  api.newGame(gameData)
+    .then(ui.onUpdateGameSucces)
+    .catch(ui.onUpdateGamefailure)
+
+  $
+}
+
 module.exports = {
-  onNewGame
+  onNewGame,
+  onUserMove
 }
