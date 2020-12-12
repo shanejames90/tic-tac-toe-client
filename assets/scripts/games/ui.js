@@ -11,6 +11,8 @@ const newGameSuccess = function (response) {
 
   store.game = response.game
 
+  // $('#new-game').trigger('reset')
+
   // const gameObject = respons
 }
 

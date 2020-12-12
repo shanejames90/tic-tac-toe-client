@@ -5,6 +5,10 @@ const ui = require('./ui')
 
 const getFormFields = require('./../../../lib/get-form-fields')
 
+let currentPlayer = 'x'
+let turnCount = 0
+let gameOver = false
+
 const onNewGame = function (event) {
   event.preventDefault()
 
@@ -16,79 +20,35 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
+// currentPlayer = currentPlayer === 'x' ? 'o' : 'x'
+const playerTurn = function () {
+  currentPlayer = 'x'
+  turnCount++
+  if (turnCount % 2 === 0) {
+    currentPlayer = 'o'
+  } else {
+    currentPlayer = 'x'
+  }
+}
 const onUserMove = function (event) {
   event.preventDefault()
+  const index = event.target.id
 
-  const index = $(event.target).data('cellIndex')
+  playerTurn()
 
-  let cellValue = ['x', 'o']
-  for (let i = 0; i < cellValue.length; i++) {
-    if ($(event.target).html() === '') {
-      $(event.target).html(cellValue[0])
-    } else if ($(event.target).html() !== '') {
-      $(event.target).html(cellValue[1])
-    }
+  if ($(event.target).text().length === 0) {
+    $(event.target).text(currentPlayer)
+    const value = $(event.target).text()
+    const playerMove = 'move is valid'
+    console.log(playerMove)
+    api.userMove(index, value)
+      .then(ui.onUpdateGameSucces)
+      .catch(ui.onUpdateGamefailure)
+  } else {
+    const playerMove = 'move is invalid'
+    console.log(playerMove)
+    $('#message').text('invalid move')
   }
-
-  const value = $(event.target).data([cellValue])
-
-  api.onUserMove(index, value)
-    .then(ui.onUpdateGameSucces)
-    .catch(ui.onUpdateGamefailure)
-
-  // let tileMark = 'x'
-  // const value2 = 'o'
-  //
-  // if ($(event.target).html() === '') {
-  //   $(event.target).html(value = 'x')
-
-
-  // else if ($(event.target).html(cellValue1)) {
-  //   $(event.target).html(cellValue2)
-  // } else {
-  //   $(event.target).html(cellValue2)
-  // }
-  // else if ($(event.target).html() === 'cellValue1') {
-  //   $(event.target).html(cellValue2)
-  // }
-
-  // else {
-  //   $(event.target).html('o')
-  // }
-  // `<h3>${tileMark}</h3>`
-
-  // api.newGame(index, value)
-  //   .then(ui.onUpdateGameSucces)
-  //   .catch(ui.onUpdateGamefailure)
-  //
-  //   if (value === 'x') {
-  //     value = 'o'
-  //   }
-  // } else {
-  //   value = 'x'
-  // }
-  {$('#message').text('Spot taken, please choose a valid spot!')}
-  console.log('TAKEN!')
-
-  // $(event.target).html(`<h3>${value}</h3>`)
-
-  // const gameData = {
-  // //   game: {
-  // //     cell: {
-  // //       index: index,
-  // //       value: tileMark
-  // //     },
-  // //     over: false
-  // //   }
-  // // }
-
-  // api.newGame(tileMark, index)
-  //   .then(ui.onUpdateGameSucces)
-  //   .catch(ui.onUpdateGamefailure)
-  // api.newGame(index, value)
-  // api.onUserMove(index, value)
-  //   .then(ui.onUpdateGameSucces)
-  //   .catch(ui.onUpdateGamefailure)
 }
 
 module.exports = {

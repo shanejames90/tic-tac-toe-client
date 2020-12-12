@@ -23,5 +23,5 @@ $(() => {
 
   $('#new-game').on('submit', gameEvents.onNewGame)
 
-  $('.row').on('click', gameEvents.onUserMove).on('click', gameEvents.onUserMove)
+  $('.row').on('click', gameEvents.onUserMove)
 })

@@ -15,8 +15,10 @@ const newGame = function (data) {
 }
 
 const userMove = function (index, value) {
+  const over = store.game.over
+  console.log(over)
   return $.ajax({
-    url: config.apiUrl + '/games' + store.games._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -27,7 +29,7 @@ const userMove = function (index, value) {
           index: index,
           value: value
         },
-        over: false
+        over: over
       }
     }
   })
