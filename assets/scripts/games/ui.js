@@ -10,6 +10,8 @@ const newGameSuccess = function (response) {
   // $('#message2').text('Player x please make youre move...')
 
   store.game = response.game
+
+  // const gameObject = respons
 }
 
 const newGameFailure = function (error) {
@@ -17,13 +19,13 @@ const newGameFailure = function (error) {
 }
 
 const onUpdateGameSuccess = function (response) {
-  $('#message').text('Player x please make your move...')
+  $('#message2').text('Player x please make your move...')
   store.game = response.game
 
-  const moveHtml = `
-    <h3>cell-value: ${response.game.cellIndex}</h3>
-  `
-  $('.row').html(moveHtml)
+  // const moveHtml = `
+  //   <h3>cell-value: ${response.game.cellIndex}</h3>
+  // `
+  // $('.row').html(moveHtml)
 }
 
 const onUpdateGameFailure = function (error) {

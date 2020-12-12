@@ -14,13 +14,21 @@ const newGame = function (data) {
   })
 }
 
-const userMove = function (gameData) {
+const userMove = function (index, value) {
   return $.ajax({
     url: config.apiUrl + '/games' + store.games._id,
     method: 'PATCH',
-    data: gameData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: value
+        },
+        over: false
+      }
     }
   })
 }
