@@ -45,6 +45,8 @@ I was very methodical with the planning for this project. Here is an outline, in
 
 I initially attemped to create a more effecient way to feed the API winning combinations.  I prepared an array with the 8 winning combinations, and tried to determine a winner in that fashion.  However, the logic behind this way proved to be greater than my skill level at the present moment.
 
+One large hurdle to unsolved propblems is the balancing act within ones self between expectaitons and reality. I noticed that much of my creative energy, if left unchecked was geared towards the "expectations" bubble.  When in actuality, I was most productive when my creative energies were neutral between expecation and reality, or even leaning more towards reality. Many problems that I faced, I spent much time pondering ways to solve them that possibly don't even exist. There is hope, I see that one can be a creative pragmatist, and then a creative idealist when the time calls for it, only through exhaustive planning and powerful self-discipline. 
+
 ### Images
 
 [Wireframe v1.2](https://imgur.com/gallery/4UJqdXh)
