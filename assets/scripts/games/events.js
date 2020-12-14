@@ -5,34 +5,53 @@ const ui = require('./ui')
 
 const getFormFields = require('./../../../lib/get-form-fields')
 
-let currentPlayer = 'x'
-let turnCount = 0
-let gameOver = false
+// Define current game board:
 
 const onNewGame = function (event) {
   event.preventDefault()
 
-  const form = event.target
-  const data = getFormFields(form)
+  // const form = event.target
+  // const data = getFormFields(form)
+  // console.log(data)
+  gameCell = ['', '', '', '', '', '', '', '', '']
+  gameOver = false
+  turnCount = 0
 
-  api.newGame(data)
+  $('#gameboard').css('pointer-events', 'auto')
+
+  api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
 
-// currentPlayer = currentPlayer === 'x' ? 'o' : 'x'
-const playerTurn = function () {
+let currentPlayer = 'x'
+let gameCell = ['', '', '', '', '', '', '', '', '']
+let turnCount = 0
+let gameOver = false
+
+let playerTurn = function () {
   currentPlayer = 'x'
   turnCount++
   if (turnCount % 2 === 0) {
     currentPlayer = 'o'
+    $('#turn-alert').text('Player: x  --  please make your move!')
   } else {
     currentPlayer = 'x'
+    $('#turn-alert').text('Player: o  --  please make your move!')
   }
 }
+
 const onUserMove = function (event) {
+  // const index = event.target.id
+  // console.log(index)
   event.preventDefault()
+
+  $('#special-alert').hide()
+  // console.log(playerTurn)
+  // const form = event.target
+  // const data = getFormFields(form)
   const index = event.target.id
+  console.log(index)
 
   playerTurn()
 
@@ -41,13 +60,98 @@ const onUserMove = function (event) {
     const value = $(event.target).text()
     const playerMove = 'move is valid'
     console.log(playerMove)
-    api.userMove(index, value)
+    gameCell[index] = currentPlayer
+
+    $('#special-alert').show()
+
+    const checkWin = function () {
+      if (gameCell[index] === gameCell[0] &&
+      gameCell[index] === gameCell[1] &&
+      gameCell[index] === gameCell[2]) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[3] &&
+      gameCell[index] === gameCell[4] &&
+      gameCell[index] === gameCell[5]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[6] &&
+      gameCell[index] === gameCell[7] &&
+      gameCell[index] === gameCell[8]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[0] &&
+      gameCell[index] === gameCell[3] &&
+      gameCell[index] === gameCell[6]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[1] &&
+      gameCell[index] === gameCell[4] &&
+      gameCell[index] === gameCell[7]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[2] &&
+      gameCell[index] === gameCell[5] &&
+      gameCell[index] === gameCell[8]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[0] &&
+      gameCell[index] === gameCell[4] &&
+      gameCell[index] === gameCell[8]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      } else if (
+        gameCell[index] === gameCell[2] &&
+      gameCell[index] === gameCell[4] &&
+      gameCell[index] === gameCell[6]
+      ) {
+        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        gameOver = true
+        $('#gameboard').css('pointer-events', 'none')
+      }
+      let gameDraw = !gameCell.includes('')
+      if (gameDraw) {
+        $('#special-alert').text('Game has ended in a tie! CAT wins!')
+        $('.row').on('click', function () {
+          $('#special-alert').text('Please start a new game!')
+          $('#gameboard').css('pointer-events', 'none')
+        })
+        gameOver = true
+      }
+    }
+    checkWin(gameCell)
+
+    api.userMove(index, currentPlayer, gameOver)
       .then(ui.onUpdateGameSucces)
       .catch(ui.onUpdateGamefailure)
+    // console.log(value)
   } else {
+    $(event.target).off()
+    $(playerTurn).off()
+    // Disable turncount
     const playerMove = 'move is invalid'
     console.log(playerMove)
-    $('#message').text('invalid move')
+    $('#special-alert').show()
+    $('#special-alert').text('invalid move')
   }
 }
 

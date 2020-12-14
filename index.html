@@ -33,26 +33,31 @@
   </div>
   <div class="authenticated">
     <form id="new-game">
+      <h5 id="game-message"></h5>
       <button type="submit">New Game</button>
     </form>
     <form id="games-played">
       <button type="submit">Games Played</button>
     </form>
-    <div id="gameboard">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 box alt-color" data-cell-index="0" id="0" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="1" id="1" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="2" id="2" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="3" id="3" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="4" id="4" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="5" id="5" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="6" id="7" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="7" id="8" data-cell-value=""></div>
-          <div class="col-4 box alt-color" data-cell-index="8" id="9" data-cell-value=""></div>
+    <form>
+      <div id="gameboard">
+        <h3 id="turn-alert"></h3>
+        <h4 id="special-alert"></h4>
+        <div class="container">
+          <div class="row">
+            <div class="col-4 box alt-color" data-cell-index="0" id="0" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="1" id="1" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="2" id="2" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="3" id="3" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="4" id="4" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="5" id="5" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="6" id="6" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="7" id="7" data-cell-value=""></div>
+            <div class="col-4 box alt-color" data-cell-index="8" id="8" data-cell-value=""></div>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
     <form id="change-password">
       <input name="passwords[old]" type="password" placeholder="old password" />
       <input name="passwords[new]" type="password" placeholder="new password" />

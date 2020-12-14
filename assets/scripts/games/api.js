@@ -14,9 +14,12 @@ const newGame = function (data) {
   })
 }
 
-const userMove = function (index, value) {
-  const over = store.game.over
-  console.log(over)
+const userMove = function (index, value, gameOver) {
+  // console.log(data)
+  // console.log(index)
+  // console.log(value)
+  // const gameOver = store.game.over
+  // console.log(over)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -29,11 +32,12 @@ const userMove = function (index, value) {
           index: index,
           value: value
         },
-        over: over
+        over: gameOver
       }
     }
   })
 }
+
 module.exports = {
   newGame,
   userMove
