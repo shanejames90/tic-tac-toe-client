@@ -32,7 +32,9 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
   $('#gameboard').hide()
   $('.unauthenticated').hide()
-
+  $('#games-flash').hide()
+  $('#turn-alert').hide()
+  $('#special-alert').hide()
 }
 
 const signInFailure = function (error) {
@@ -58,7 +60,8 @@ const signOutFailure = function (error) {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Password changed successfully!')
+  $('#games-flash').show()
+  $('#games-flash').text('Password changed successfully!')
 
   $('form').trigger('reset')
 }

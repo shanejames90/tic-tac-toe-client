@@ -9,7 +9,8 @@ const getFormFields = require('./../../../lib/get-form-fields')
 
 const onNewGame = function (event) {
   event.preventDefault()
-
+  $('#special-alert').hide()
+  $('#turn-alert').show()
   // const form = event.target
   // const data = getFormFields(form)
   // console.log(data)
@@ -25,19 +26,19 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
-let currentPlayer = 'x'
+let currentPlayer = 'X'
 let gameCell = ['', '', '', '', '', '', '', '', '']
 let turnCount = 0
 let gameOver = false
 
 let playerTurn = function () {
-  currentPlayer = 'x'
+  currentPlayer = 'X'
   turnCount++
   if (turnCount % 2 === 0) {
-    currentPlayer = 'o'
+    currentPlayer = 'O'
     $('#turn-alert').text('YOUR TURN: PLAYER X')
   } else {
-    currentPlayer = 'x'
+    currentPlayer = 'X'
     $('#turn-alert').text('YOUR TURN: PLAYER O')
   }
 }
@@ -52,7 +53,6 @@ const onUserMove = function (event) {
   // const form = event.target
   // const data = getFormFields(form)
   const index = event.target.id
-  console.log(index)
 
   playerTurn()
 
@@ -63,13 +63,15 @@ const onUserMove = function (event) {
     console.log(playerMove)
     gameCell[index] = currentPlayer
 
-    $('#special-alert').show()
+    $('#special-alert').hide()
 
     const checkWin = function () {
       if (gameCell[index] === gameCell[0] &&
       gameCell[index] === gameCell[1] &&
       gameCell[index] === gameCell[2]) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -77,7 +79,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[4] &&
       gameCell[index] === gameCell[5]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -85,7 +89,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[7] &&
       gameCell[index] === gameCell[8]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -93,7 +99,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[3] &&
       gameCell[index] === gameCell[6]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -101,7 +109,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[4] &&
       gameCell[index] === gameCell[7]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -109,7 +119,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[5] &&
       gameCell[index] === gameCell[8]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -117,7 +129,9 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[4] &&
       gameCell[index] === gameCell[8]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       } else if (
@@ -125,12 +139,16 @@ const onUserMove = function (event) {
       gameCell[index] === gameCell[4] &&
       gameCell[index] === gameCell[6]
       ) {
-        $('#special-alert').text(`You are the winner ${currentPlayer}`)
+        $('#turn-alert').hide()
+        $('#special-alert').show()
+        $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
       }
       let gameDraw = !gameCell.includes('')
       if (gameDraw) {
+        $('#turn-alert').hide()
+        $('#special-alert').show()
         $('#special-alert').text('Game has ended in a tie! CAT wins!')
         $('.row').on('click', function () {
           $('#special-alert').text('Please start a new game!')
@@ -150,9 +168,9 @@ const onUserMove = function (event) {
     $(playerTurn).off()
     // Disable turncount
     const playerMove = 'move is invalid'
-    console.log(playerMove)
     $('#special-alert').show()
     $('#special-alert').text('invalid move')
+    $('#turn-alert').show()
   }
 }
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>tictactoe</title>
+  <title>EDSACtoe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,32 +14,78 @@
 </head>
 
 <body>
-  <h1>ED-SAC-toe </h1>
-  <p id="message"></p>
-  <p id="message2"></p>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="unauthenticated">
-    <form id="sign-in">
-      <input name="credentials[email]" type="text" placeholder="email" />
-      <input name="credentials[password]" type="password" placeholder="password" />
-      <button type="submit">Sign In</button>
-    </form>
-    <form id="sign-up">
-      <h6>New User</h6>
-      <input name="credentials[email]" type="text" placeholder="Enter Your Email" />
-      <input name="credentials[password]" type="password" placeholder="create a password" />
-      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" />
-      <button type="submit">Sign Up</button>
-    </form>
+  <a class="navbar-brand">ED-SAC-toe</a>
+  <form id="sign-in" class="form-inline">
+    <input name="credentials[email]" class="form-control mr-sm-2" type="text" placeholder="email" aria-label="sign-in">
+    <input name="credentials[password]" class="form-control mr-sm-2" type="password" placeholder="password" aria-label="sign-in">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+  </form>
+  <form id="sign-up" class="form-inline">
+    <input name="credentials[email]" class="form-control mr-sm-2" type="text" placeholder="Enter Your Email" aria-label="sing-up">
+    <input name="credentials[password]" class="form-control mr-sm-2" type="password" placeholder="create a password" aria-label="sign-up">
+    <input name="credentials[password_confirmation]" class="form-control mr-sm-2" type="password" placeholder="confirm password" aria-label="sign-up">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+  </form>
   </div>
   <div class="authenticated">
+    <div class="btn-group" role="group" aria-label="Basic example">
     <form id="new-game">
+      <!-- <h5 id="game-message"></h5> -->
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">New Game</button>
+    </form>
+    <form id="games-index" class="form-inline">
+      <div class="total-games">
+        <!-- <h5 id="games-flash"></h5> -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Games Played</button>
+      </div>
+    </form>
+    <form id="sign-out" class="form-inline">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button">Sign Out</button>
+    </form>
+    <form id="change-password" class="form-inline">
+      <input name="passwords[old]" class="form-control mr-sm-2" type="password" placeholder="old password" aria-label="change-password" />
+      <input name="passwords[new]" class="form-control mr-sm-2" type="password" placeholder="new password" aria-label="change-password" />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Change Password</button>
+    </form>
+  </div>
+  </div>
+</nav>
+  <!-- <h1>ED-SAC-toe </h1> -->
+  <!-- <p id="message"></p>
+  <p id="message2"></p> -->
+  <!-- <div class="unauthenticated"> -->
+    <!-- <form id="sign-in"> -->
+      <!-- <input name="credentials[email]" type="text" placeholder="email" /> -->
+      <!-- <input name="credentials[password]" type="password" placeholder="password" /> -->
+      <!-- <button type="submit">Sign In</button>
+    </form> -->
+    <!-- <form id="sign-up"> -->
+      <!-- <h6>New User</h6> -->
+      <!-- <input name="credentials[email]" type="text" placeholder="Enter Your Email" /> -->
+      <!-- <input name="credentials[password]" type="password" placeholder="create a password" /> -->
+      <!-- <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" /> -->
+      <!-- <button type="submit">Sign Up</button>
+    </form> -->
+  <!-- <div class="authenticated"> -->
+    <!-- <form id="new-game">
       <h5 id="game-message"></h5>
       <button type="submit">New Game</button>
-    </form>
+    </form> -->
+    <p id="message"></p>
+    <p id="message2"></p>
+  <div class="authenticated">
+    <h3 id="turn-alert"></h3>
+    <h4 id="special-alert"></h4>
+    <h5 id="game-message"></h5>
+    <h5 id="games-flash"></h5>
     <form>
       <div id="gameboard">
-        <h3 id="turn-alert"></h3>
+        <!-- <h3 id="turn-alert"></h3>
         <h4 id="special-alert"></h4>
+        <h5 id="game-message"></h5>
+        <h5 id="games-flash"></h5> -->
         <div class="container">
           <div class="row">
             <div class="col-4 box alt-color" data-cell-index="0" id="0" data-cell-value=""></div>
@@ -55,21 +101,22 @@
         </div>
       </div>
     </form>
-    <form id="change-password">
+  </div>
+    <!-- <form id="change-password">
       <input name="passwords[old]" type="password" placeholder="old password" />
       <input name="passwords[new]" type="password" placeholder="new password" />
       <button type="submit">Change Password</button>
-    </form>
-    <form id="sign-out">
+    </form> -->
+    <!-- <form id="sign-out">
       <button type="button">Sign Out</button>
-    </form>
-    <form id="games-index">
+    </form> -->
+    <!-- <form id="games-index">
       <div class="total-games">
         <h5 id="games-flash"></h5>
         <button type="button">Games Played</button>
       </div>
-    </form>
-  </div>
+    </form> -->
+  <!-- </div> -->
 </body>
 
 </html>
