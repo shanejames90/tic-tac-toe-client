@@ -16,6 +16,7 @@ const onNewGame = function (event) {
   gameCell = ['', '', '', '', '', '', '', '', '']
   gameOver = false
   turnCount = 0
+  $('#turn-alert').text('YOUR TURN: PLAYER X')
 
   $('#gameboard').css('pointer-events', 'auto')
 
@@ -34,10 +35,10 @@ let playerTurn = function () {
   turnCount++
   if (turnCount % 2 === 0) {
     currentPlayer = 'o'
-    $('#turn-alert').text('Player: x  --  please make your move!')
+    $('#turn-alert').text('YOUR TURN: PLAYER X')
   } else {
     currentPlayer = 'x'
-    $('#turn-alert').text('Player: o  --  please make your move!')
+    $('#turn-alert').text('YOUR TURN: PLAYER O')
   }
 }
 
@@ -155,7 +156,16 @@ const onUserMove = function (event) {
   }
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
+}
+
 module.exports = {
   onNewGame,
-  onUserMove
+  onUserMove,
+  onGetGames
 }

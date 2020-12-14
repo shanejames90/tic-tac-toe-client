@@ -38,7 +38,18 @@ const userMove = function (index, value, gameOver) {
   })
 }
 
+const getGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGame,
-  userMove
+  userMove,
+  getGames
 }
