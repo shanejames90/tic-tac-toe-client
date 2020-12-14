@@ -6,9 +6,20 @@ The user can elect to change a password via authentication.  The user can also v
 
 ## Important Links
 
+[Game Project API](https://git.generalassemb.ly/ga-wdi-boston/game-project-api)
 
 ## Planning Story
+I was very methodical with the planning for this project. Here is an outline, in chronological order of the steps taken to build this app:
 
++ Set Up
++ Authentication
++ Create New Game
++ Game UI Round 1
++ Game UI Round 2
++ Update Game
++ Play Game Again
++ View Games
++ Final Touches
 ### User Stories
 
 + As a user, I want to be able to sign up
@@ -32,6 +43,7 @@ The user can elect to change a password via authentication.  The user can also v
 
 ### Unsolved Problems
 
+I initially attemped to create a more effecient way to feed the API winning combinations.  I prepared an array with the 8 winning combinations, and tried to determine a winner in that fashion.  However, the logic behind this way proved to be greater than my skill level at the present moment.
 
 ### Images
 
