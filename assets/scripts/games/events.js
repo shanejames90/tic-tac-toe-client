@@ -60,7 +60,7 @@ const onUserMove = function (event) {
     $(event.target).text(currentPlayer)
     const value = $(event.target).text()
     const playerMove = 'move is valid'
-    console.log(playerMove)
+    // console.log(playerMove)
     gameCell[index] = currentPlayer
 
     $('#special-alert').hide()
@@ -144,16 +144,15 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
-      }
-      let gameDraw = !gameCell.includes('')
-      if (gameDraw) {
+      } else if (!gameCell.includes('')) {
         $('#turn-alert').hide()
         $('#special-alert').show()
         $('#special-alert').text('Game has ended in a tie! CAT wins!')
-        $('.row').on('click', function () {
-          $('#special-alert').text('Please start a new game!')
-          $('#gameboard').css('pointer-events', 'none')
-        })
+        $('#gameboard').css('pointer-events', 'none')
+        // $('.row').on('click', function () {
+        //   $('#special-alert').text('Please start a new game!')
+        //   $('#gameboard').css('pointer-events', 'none')
+        // })
         gameOver = true
       }
     }
@@ -164,7 +163,7 @@ const onUserMove = function (event) {
       .catch(ui.onUpdateGamefailure)
     // console.log(value)
   } else {
-    $(event.target).off()
+    // $(event.target).off()
     $(playerTurn).off()
     // Disable turncount
     const playerMove = 'move is invalid'

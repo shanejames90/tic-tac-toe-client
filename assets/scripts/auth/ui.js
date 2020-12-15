@@ -42,7 +42,7 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  console.log('did this run?')
+  // console.log('did this run?')
   $('#message').text('Signed out successfully!')
 
   $('.authenticated').hide()
