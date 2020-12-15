@@ -49,7 +49,7 @@ One large hurdle to unsolved propblems is the balancing act within ones self bet
 
 ### Images
 
-![alt text](https://imgur.com/gallery/4UJqdXh)
+![Wireframe v1.2](https://imgur.com/gallery/4UJqdXh "Wireframe v1.2")
 
 [Breaking Down the Problem](https://imgur.com/gallery/i4J7Dmg)
 
