@@ -1,5 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Orbitron:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+button {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+}
+
+.landing {
+  background-color: black;
+}
 
 .container {
   height: 100vh;
@@ -19,14 +35,17 @@
 
   // to make sure backgorund takes up 100% of width
   background-size: cover;
+  // box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, .7);
 }
 .parking {
   // add a solid black line to the right of each cell makes line b/t
   // columns
+
   border-right: 1px solid black;
 
   border-bottom: 1px solid black;
-
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .5);
+  border-radius: 4px;
   // Selecting the 3 right boxes, nth-child select elements based on their
   // position. 3n selects every third element (box)
   &:nth-child(3n) {
@@ -65,16 +84,20 @@
   user-select: none;
 }
 #uno{
-  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif")
+  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
+  background-position: center;
 }
 #tres{
-  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif")
+  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
+  background-position: center;
 }
 #sieta{
-  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif")
+  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
+  background-position: center;
 }
 #nueva{
-  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif")
+  background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
+  background-position: center;
 }
 
 #dos{
@@ -109,6 +132,12 @@
   transform: rotate(360deg);
   transition: all 0.3s ease-in-out 0s;
 }
+#cinco{
+  font-family: 'Bungee Outline', cursive;
+  background: #47CACC;
+  font-size: 400%;
+}
+
 
 .board {
   // this centers board; makes left and right margin the same
@@ -142,7 +171,6 @@
   &:nth-last-child(-1n + 3) {
     border-bottom: 0;
   }
-
   // set the minimum height for each box
   min-height: calc(100% / 3);
 

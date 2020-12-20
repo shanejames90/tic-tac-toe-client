@@ -11,6 +11,7 @@ const onNewGame = function (event) {
   event.preventDefault()
   $('#special-alert').hide()
   $('#turn-alert').show()
+  $('#message').hide()
   // const form = event.target
   // const data = getFormFields(form)
   // console.log(data)

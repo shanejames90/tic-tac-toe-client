@@ -18,7 +18,6 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (response) {
   $('#message').text('Signed in successfully!')
-  $('#message').fadeOut(5000)
 
   // "store" the User
   // Create a new key on the 'store' object
