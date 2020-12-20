@@ -1,23 +1,89 @@
 @import '~bootstrap/scss/bootstrap';
 
- $alt-color: $cyan;
- $body-bg-color: $gray-200;
- $font-color: $light;
 
- body {
-   background-color: $body-bg-color;
- }
+.container {
+  height: 100vh;
+}
 
- .box {
-   align-items: center;
-   background-color: $secondary;
-   border: 1px solid $white;
-   color: $font-color;
-   display: flex;
-   height: 80px;
-   justify-content: center;
- }
+.board {
+  // this centers board; makes left and right margin the same
+  margin: auto;
+  // make height of board take up whole viewport minus some space at the bottom
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
 
- .alt-color {
-   background-color: $alt-color;
- }
+  // set background image
+  // on deployed site, backgorund image we ref must be in public folder
+  background-repeat: no-repeat;
+  background-position: center;
+
+  // to make sure backgorund takes up 100% of width
+  background-size: cover;
+}
+.box {
+  // add a solid black line to the right of each cell makes line b/t
+  // columns
+  border-right: 1px solid black;
+
+  border-bottom: 1px solid black;
+
+  // Selecting the 3 right boxes, nth-child select elements based on their
+  // position. 3n selects every third element (box)
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+// Select the last three elements
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
+
+  // set the minimum height for each box
+  min-height: calc(100% / 3);
+
+  // Center the Xs and Os in the board
+  display: flex;
+  //set the contents position along the main axis (left to right)
+  justify-content: center;
+
+  // set the conts position along the cross axis (top to bottom)
+  align-items: center;
+
+  // initially each cell will have white background until clicked
+  background-color: #47CACC;
+
+  color: #FE7A15;
+  // make the font larger, take up 15% of viewport's height
+  font-size: 15vh;
+
+  text-shadow: 2px 2px rgba(0, 0, 0, .50);
+
+  &:hover {
+    background-color: #FF9CDA;
+  }
+  // Makes sure user cannot select our text when clicking on it
+  user-select: none;
+}
+
+#turn-alert, #special-alert, #game-message, #games-flash, #message, #message2{
+  display: flex;
+  //set the contents position along the main axis (left to right)
+  justify-content: center;
+
+  // set the conts position along the cross axis (top to bottom)
+  align-items: center;
+}
+
+.navbar{
+  display: flex;
+  //set the contents position along the main axis (left to right)
+  justify-content: center;
+
+  // set the conts position along the cross axis (top to bottom)
+  align-items: center;
+}
+
+#logo{
+  display: flex;
+  justify-content: left;
+}

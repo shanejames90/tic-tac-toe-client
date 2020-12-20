@@ -47,6 +47,8 @@ const onUserMove = function (event) {
   // const index = event.target.id
   // console.log(index)
   event.preventDefault()
+  $('#game-message').hide()
+  $('#games-flash').hide()
 
   $('#special-alert').hide()
   // console.log(playerTurn)

@@ -4,7 +4,7 @@ const store = require('./../store')
 
 const newGameSuccess = function (data) {
   $('#game-message').text('Good luck!')
-  $('#game-message').fadeOut(4000)
+  $('#message').hide()
 
   $('#gameboard').show()
   $('#games-flash').hide()
