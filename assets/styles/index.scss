@@ -12,6 +12,15 @@ p, h3, h4, h5 {
   font-family: 'Orbitron', sans-serif;
 }
 
+.delicate {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: #8e9eab;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .navbar-brand {
   font-family: 'Orbitron', sans-serif;
   font-size: 30px;
@@ -191,14 +200,12 @@ p, h3, h4, h5 {
   background-color: rgba(255,255,255,0);
 }
 
-
 .board {
   // this centers board; makes left and right margin the same
   margin: auto;
   // make height of board take up whole viewport minus some space at the bottom
   max-height: calc(100vh - 75px);
   max-width: calc(100vh - 75px);
-
   // set background image
   // on deployed site, backgorund image we ref must be in public folder
   background-repeat: no-repeat;

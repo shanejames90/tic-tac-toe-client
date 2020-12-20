@@ -28,6 +28,7 @@ const signInSuccess = function (response) {
   // Hide the unauth options
 
   // Show the auth options
+  $('.delicate').show()
   $('.authenticated').show()
   $('#gameboard').hide()
   $('.unauthenticated').hide()
