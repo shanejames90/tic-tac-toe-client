@@ -5,7 +5,9 @@ const store = require('./../store')
 // The ajax function's .then
 // will pass this funciton a response object from the API
 const signUpSuccess = function (response) {
-  $('#message').text('Signed up successfully!')
+  $('#message2').hide()
+  $('#success').show()
+  $('#success').text('Signed up successfully!')
 
   $('form').trigger('reset')
 }
@@ -13,10 +15,13 @@ const signUpSuccess = function (response) {
 // The ajax function's .catch
 // will pass this funciton an error object
 const signUpFailure = function (error) {
-  $('#message').text('Sign up failed with error: ' + error.responseJSON.message)
+  $('#success').text('Sign up failed with error: ' + error.responseJSON.message)
 }
 
 const signInSuccess = function (response) {
+  $('#message2').hide()
+  $('#success').hide()
+  $('#message').show()
   $('#message').text('Signed in successfully!')
 
   // "store" the User
@@ -43,11 +48,13 @@ const signInFailure = function (error) {
 
 const signOutSuccess = function () {
   // console.log('did this run?')
-  $('#message').text('Signed out successfully!')
 
   $('.authenticated').hide()
   $('.unauthenticated').show()
-  $('#message2').hide()
+  $('#message2').show()
+  $('#message').hide()
+  $('#games-flash').hide()
+  $('#message2').text('Signed out successfully!')
 
   store.user = null
 
@@ -56,18 +63,20 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Sign out fail: ' + error.responseJSON.message)
+  $('#message2').text('Sign out fail: ' + error.responseJSON.message)
 }
 
 const changePasswordSuccess = function () {
   $('#games-flash').show()
   $('#games-flash').text('Password changed successfully!')
+  $('#message').hide()
 
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Password change failed with error: ' + error.responseJSON.message)
+  $('#games-flash').text('Password change failed with error: ' + error.responseJSON.message)
+  $('#message').hide()
 }
 
 module.exports = {

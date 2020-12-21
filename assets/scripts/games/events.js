@@ -178,6 +178,7 @@ const onUserMove = function (event) {
 
 const onGetGames = function (event) {
   event.preventDefault()
+  $('#message').hide()
 
   api.getGames()
     .then(ui.getGamesSuccess)
