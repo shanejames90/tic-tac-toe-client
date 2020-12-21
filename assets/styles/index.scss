@@ -159,11 +159,15 @@ p, h3, h4, h5 {
   font-family: 'Bungee Outline', cursive;
   background: #47CACC;
   font-size: 35%;
+  display: flex;
+  justify-content: center;
 }
 .reset {
 	color: #FFF;
 	transition: all 0.5s;
 	position: relative;
+  display: flex;
+  justify-content: center;
 }
 .reset span {
 	z-index: 2;
