@@ -9,6 +9,16 @@ const getFormFields = require('./../../../lib/get-form-fields')
 
 const onNewGame = function (event) {
   event.preventDefault()
+  // un-blur on start of new game
+  $('.zero').css({ filter: 'blur(0px)' })
+  $('.one').css({ filter: 'blur(0px)' })
+  $('.two').css({ filter: 'blur(0px)' })
+  $('.three').css({ filter: 'blur(0px)' })
+  $('.four').css({ filter: 'blur(0px)' })
+  $('.five').css({ filter: 'blur(0px)' })
+  $('.six').css({ filter: 'blur(0px)' })
+  $('.seven').css({ filter: 'blur(0px)' })
+  $('.eight').css({ filter: 'blur(0px)' })
   $('#special-alert').hide()
   $('#turn-alert').show()
   $('#message').hide()
@@ -77,6 +87,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.four').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[3] &&
       gameCell[index] === gameCell[4] &&
@@ -87,6 +103,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[6] &&
       gameCell[index] === gameCell[7] &&
@@ -97,6 +119,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.four').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[0] &&
       gameCell[index] === gameCell[3] &&
@@ -107,6 +135,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.four').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[1] &&
       gameCell[index] === gameCell[4] &&
@@ -117,6 +151,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[2] &&
       gameCell[index] === gameCell[5] &&
@@ -127,6 +167,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.four').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[0] &&
       gameCell[index] === gameCell[4] &&
@@ -137,6 +183,12 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
       } else if (
         gameCell[index] === gameCell[2] &&
       gameCell[index] === gameCell[4] &&
@@ -147,11 +199,27 @@ const onUserMove = function (event) {
         $('#special-alert').text(`${currentPlayer} HAS WON THE GAME!`)
         gameOver = true
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
       } else if (!gameCell.includes('')) {
         $('#turn-alert').hide()
         $('#special-alert').show()
         $('#special-alert').text('Game has ended in a tie! CAT wins!')
+        // blur gameboard
         $('#gameboard').css('pointer-events', 'none')
+        $('.zero').css({ filter: 'blur(10px)' })
+        $('.one').css({ filter: 'blur(10px)' })
+        $('.two').css({ filter: 'blur(10px)' })
+        $('.three').css({ filter: 'blur(10px)' })
+        $('.four').css({ filter: 'blur(10px)' })
+        $('.five').css({ filter: 'blur(10px)' })
+        $('.six').css({ filter: 'blur(10px)' })
+        $('.seven').css({ filter: 'blur(10px)' })
+        $('.eight').css({ filter: 'blur(10px)' })
         // $('.row').on('click', function () {
         //   $('#special-alert').text('Please start a new game!')
         //   $('#gameboard').css('pointer-events', 'none')
@@ -178,6 +246,7 @@ const onUserMove = function (event) {
 
 const onGetGames = function (event) {
   event.preventDefault()
+  $('#message').hide()
 
   api.getGames()
     .then(ui.getGamesSuccess)
