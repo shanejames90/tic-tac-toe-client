@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EDSACtoe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand">ED-SAC-toe</a>
+  <div class="unauthenticated">
+  <form id="sign-in" class="form-inline">
+    <input name="credentials[email]" class="form-control mr-sm-2" type="text" placeholder="email" aria-label="sign-in">
+    <input name="credentials[password]" class="form-control mr-sm-2" type="password" placeholder="password" aria-label="sign-in">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+  </form>
+  <form id="sign-up" class="form-inline">
+    <input name="credentials[email]" class="form-control mr-sm-2" type="text" placeholder="enter your email" aria-label="sing-up">
+    <input name="credentials[password]" class="form-control mr-sm-2" type="password" placeholder="create a password" aria-label="sign-up">
+    <input name="credentials[password_confirmation]" class="form-control mr-sm-2" type="password" placeholder="confirm password" aria-label="sign-up">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+  </form>
+  </div>
+  <div class="authenticated">
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <form id="new-game">
+      <!-- <h5 id="game-message"></h5> -->
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">New Game</button>
+    </form>
+    <form id="games-index" class="form-inline">
+      <div class="total-games">
+        <!-- <h5 id="games-flash"></h5> -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Games Played</button>
+      </div>
+    </form>
+    <form id="sign-out" class="form-inline">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button">Sign Out</button>
+    </form>
+    <form id="change-password" class="form-inline">
+      <input name="passwords[old]" class="form-control mr-sm-2" type="password" placeholder="old password" aria-label="change-password" />
+      <input name="passwords[new]" class="form-control mr-sm-2" type="password" placeholder="new password" aria-label="change-password" />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Change Password</button>
+    </form>
+  </div>
+  </div>
+    <p id="success"></p>
+    <p id="message"></p>
+    <p id="message2"></p>
+      <h5 id="games-flash"></h5>
+</nav>
+<div class="unauthenticated">
+    <section class="landing">
+      <div class="container">
+        <div class="row h-100 land">
+          <div class="col-4 parking" id="uno"><div class="blur"></div></div>
+          <div class="col-4 parking" id="dos">x</div>
+          <div class="col-4 parking" id="tres"></div>
+          <div class="col-4 parking" id="quatro">o</div>
+          <div class="col-4 parking" id="cinco"><a class="reset">insert coin []</a></div>
+          <div class="col-4 parking" id="ces">x</div>
+          <div class="col-4 parking" id="sieta"></div>
+          <div class="col-4 parking" id="ocho">o</div>
+          <div class="col-4 parking" id="nueva"></div>
+        </div>
+      </div>
+    </section>
+</div>
+  <div class="authenticated">
+    <form>
+      <div class="delicate">
+      <div id="gameboard">
+        <h3 id="turn-alert"></h3>
+        <h4 id="special-alert"></h4>
+        <h5 id="game-message"></h5>
+        <!-- <h3 id="turn-alert"></h3>
+        <h4 id="special-alert"></h4>
+        <h5 id="game-message"></h5>
+        <h5 id="games-flash"></h5> -->
+        <div class="container">
+          <div class="row h-100 board">
+            <div class="col-4 box zero alt-color" data-cell-index="0" id="0" data-cell-value=""></div>
+            <div class="col-4 box one alt-color" data-cell-index="1" id="1" data-cell-value=""></div>
+            <div class="col-4 box two alt-color" data-cell-index="2" id="2" data-cell-value=""></div>
+            <div class="col-4 box three alt-color" data-cell-index="3" id="3" data-cell-value=""></div>
+            <div class="col-4 box four alt-color" data-cell-index="4" id="4" data-cell-value=""></div>
+            <div class="col-4 box five alt-color" data-cell-index="5" id="5" data-cell-value=""></div>
+            <div class="col-4 box six alt-color" data-cell-index="6" id="6" data-cell-value=""></div>
+            <div class="col-4 box seven alt-color" data-cell-index="7" id="7" data-cell-value=""></div>
+            <div class="col-4 box eight alt-color" data-cell-index="8" id="8" data-cell-value=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+    <!-- <form id="change-password">
+      <input name="passwords[old]" type="password" placeholder="old password" />
+      <input name="passwords[new]" type="password" placeholder="new password" />
+      <button type="submit">Change Password</button>
+    </form> -->
+    <!-- <form id="sign-out">
+      <button type="button">Sign Out</button>
+    </form> -->
+    <!-- <form id="games-index">
+      <div class="total-games">
+        <h5 id="games-flash"></h5>
+        <button type="button">Games Played</button>
+      </div>
+    </form> -->
+  <!-- </div> -->
+</body>
+
+</html>
