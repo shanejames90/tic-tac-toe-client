@@ -4,11 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Orbitron:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-@supports(backdrop-filter: opacity( 1.0 )) {
-  .no-support {
-    display: none;
-  }
-}
+
 button {
   font-family: 'Orbitron', sans-serif;
 }
@@ -23,7 +19,9 @@ p, h3, h4, h5 {
   // background: #8e9eab;  /* fallback for old browsers */
   // background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // filter: blur(5px)
 }
+
 
 .navbar-brand {
   font-family: 'Orbitron', sans-serif;
@@ -52,6 +50,7 @@ p, h3, h4, h5 {
   // to make sure backgorund takes up 100% of width
   background-size: cover;
 }
+
 .parking {
   // add a solid black line to the right of each cell makes line b/t
   // columns
@@ -100,27 +99,27 @@ p, h3, h4, h5 {
 }
 #uno{
   background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
-  filter: blur(10px);
+  filter: blur(7px);
   background-position: center;
   pointer-events: none;
 }
 
 #tres{
   background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
-  filter: blur(10px);
+  filter: blur(7px);
   background-position: center;
   pointer-events: none;
 
 }
 #sieta{
   background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
-  filter: blur(10px);
+  filter: blur(7px);
   background-position: center;
   pointer-events: none;
 }
 #nueva{
   background-image: url("https://i.pinimg.com/originals/5e/63/55/5e635595f410ec16fda32a53d1afbb4a.gif");
-  filter: blur(10px);
+  filter: blur(7px);
   background-position: center;
   pointer-events: none;
 }
@@ -169,7 +168,11 @@ p, h3, h4, h5 {
 .reset {
   font-family: 'Bungee Outline', cursive;
   background: #47CACC;
+<<<<<<< HEAD
   font-size: 35%;
+=======
+  font-size: 20%;
+>>>>>>> styling
   display: flex;
   justify-content: center;
 }
